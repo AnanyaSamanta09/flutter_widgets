@@ -6,7 +6,7 @@ class RowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Exploring Row Widget"),
+      appBar: AppBar(title: Text("Exploring Row Widget"),centerTitle: true,
           backgroundColor: Colors.black),
     );
   }
