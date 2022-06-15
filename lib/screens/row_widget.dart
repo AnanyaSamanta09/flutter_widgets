@@ -8,6 +8,14 @@ class RowWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Exploring Row Widget"),centerTitle: true,
           backgroundColor: Colors.black),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text('Ananya',style: TextStyle(fontSize: 20),),
+          Text('Puja',style: TextStyle(fontSize: 20)),
+          Text('Aperna',style: TextStyle(fontSize: 20)),
+        ],
+      ),
     );
   }
 }
