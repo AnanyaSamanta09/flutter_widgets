@@ -20,3 +20,4 @@ class RowWidget extends StatelessWidget {
     );
   }
 }
+// NOTE : CrossAxisAlignment in a row works with respect to the largest element present in the children list
