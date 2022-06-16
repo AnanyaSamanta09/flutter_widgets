@@ -9,13 +9,13 @@ class ColumnWidget extends StatelessWidget {
       appBar: AppBar(title: Text("Exploring Column Widget"),centerTitle: true,
           backgroundColor: Colors.black),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Text('Ananya',style: TextStyle(fontSize: 20),),
           Text('Puja',style: TextStyle(fontSize: 20),),
           Text('Aperna',style: TextStyle(fontSize: 20)),
         ],
       ),
-    );;
+    );
   }
 }

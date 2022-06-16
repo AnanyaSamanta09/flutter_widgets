@@ -9,10 +9,11 @@ class RowWidget extends StatelessWidget {
       appBar: AppBar(title: Text("Exploring Row Widget"),centerTitle: true,
           backgroundColor: Colors.black),
       body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Text('Ananya',style: TextStyle(fontSize: 20),),
-          Text('Puja',style: TextStyle(fontSize: 20),),
+          Container(height: 150,width: 60,color: Colors.blue,),
           Text('Aperna',style: TextStyle(fontSize: 20)),
         ],
       ),
