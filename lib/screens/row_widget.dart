@@ -7,6 +7,7 @@ class RowWidget extends StatefulWidget {
 }
 
 class _RowWidgetState extends State<RowWidget> {
+  //NOTE : selectedIndex=0 means it will start from 0th index,i.e., Home
   int selectedIndex=0;
 
   @override
@@ -45,15 +46,13 @@ class _RowWidgetState extends State<RowWidget> {
                 })
           ],
           backgroundColor: Colors.black),
-      // body: Row(
-      //   crossAxisAlignment: CrossAxisAlignment.end,
-      //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-      //   children: [
-      //     Text('Ananya',style: TextStyle(fontSize: 20),),
-      //     Container(height: 150,width: 60,color: Colors.blue,),
-      //     Text('Aperna',style: TextStyle(fontSize: 20)),
-      //   ],
-      // ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.redAccent,
+        onPressed: () {
+        print('Button Pressed');
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
