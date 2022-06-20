@@ -46,12 +46,23 @@ class _RowWidgetState extends State<RowWidget> {
                 })
           ],
           backgroundColor: Colors.black),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.redAccent,
-        onPressed: () {
-        print('Button Pressed');
-        },
-        child: Icon(Icons.add),
+      floatingActionButton: Container(height: 60,width: 100,
+      alignment: Alignment.center,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.shopping_cart,color: Colors.white,),
+          SizedBox(width: 4,),
+          Text('Cart',
+            style: TextStyle(
+                color: Colors.white),
+          )
+        ],
+      ),
+      decoration: BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadius.circular(15)
+      ),
       ),
     );
   }
