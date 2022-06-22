@@ -8,7 +8,7 @@ class ColumnWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Exploring Column Widget"),centerTitle: true,
           backgroundColor: Colors.black),
-      body: SingleChildScrollView( //SingleChildSCrollView() is used for making the screen scroll view
+      body: SingleChildScrollView( //SingleChildSCrollView is used for making the screen scroll view
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
