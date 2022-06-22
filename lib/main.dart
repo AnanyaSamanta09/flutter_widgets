@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/screens/Progress_Screen.dart';
 import 'package:flutter_widgets/screens/cardScreen.dart';
 import 'package:flutter_widgets/screens/clip.dart';
 import 'package:flutter_widgets/screens/column_widget.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: GridViewScreen(),debugShowCheckedModeBanner: false,);
+    return MaterialApp(home: ProgressScreen(),debugShowCheckedModeBanner: false,);
   }
 }
 
