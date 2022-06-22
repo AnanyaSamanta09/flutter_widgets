@@ -11,14 +11,22 @@ class ProgressScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CircularProgressIndicator(
               backgroundColor: Colors.yellow,
               //color: Colors.red,
               valueColor: AlwaysStoppedAnimation<Color>(Colors.red), //NOTE: this represent the color of the value
-              value: 0.8, //NOTE: this value indicates how much progress has been done(ranging from 0.0 to 1.0
+             // value: 0.8, //NOTE: this value indicates how much progress has been done(ranging from 0.0 to 1.0
+            ),
+            SizedBox(
+              width: 100,
+              child: LinearProgressIndicator(
+                backgroundColor: Colors.black,
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+               // value: 0.8,
+              ),
             )
           ],
         ),
