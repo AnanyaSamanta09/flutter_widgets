@@ -7,6 +7,8 @@ class ProgressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text('Linear Progress Indicator'),
+        centerTitle: true,
         backgroundColor: Colors.grey.shade600,
       ),
       body: Center(
