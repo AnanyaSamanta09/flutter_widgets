@@ -15,6 +15,7 @@ class TextFieldScreen extends StatelessWidget {
          child: SizedBox(
            width: 300, //NOTE: it is used for the size of the line,i.e.,text line
            child: TextFormField(
+             keyboardType: TextInputType.phone,  //NOTE: it is used for number keyborard
              decoration: const InputDecoration(
                labelText: 'Name :',
                labelStyle: TextStyle(
