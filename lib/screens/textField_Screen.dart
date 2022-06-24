@@ -15,9 +15,14 @@ class TextFieldScreen extends StatelessWidget {
          child: SizedBox(
            width: 300, //NOTE: it is used for the size of the line,i.e.,text line
            child: TextFormField(
+            // maxLines: 10,
+             //minLines: 1,
+             cursorColor: Colors.black, //NOTE: it is use for the color of the cursor
+             cursorHeight: 30,  ////NOTE: it is used for cursor length
              keyboardType: TextInputType.phone,  //NOTE: it is used for number keyborard
              decoration: const InputDecoration(
-               labelText: 'Name :',
+               hintText: 'Ananya', //NOTE: used for hint text in the box
+               labelText: 'PHONE :',
                labelStyle: TextStyle(
                  fontSize: 25,
                  color: Colors.blue,
