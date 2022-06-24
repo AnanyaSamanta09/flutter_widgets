@@ -21,6 +21,7 @@ class TextFieldScreen extends StatelessWidget {
              cursorHeight: 30,  ////NOTE: it is used for cursor length
              keyboardType: TextInputType.phone,  //NOTE: it is used for number keyborard
              decoration: const InputDecoration(
+               prefixIcon: Icon(Icons.phone), //NOTE: used for phone icon in the phone box
                hintText: 'Ananya', //NOTE: used for hint text in the box
                labelText: 'PHONE :',
                labelStyle: TextStyle(
