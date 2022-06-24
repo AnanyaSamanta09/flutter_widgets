@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/screens/calculator_Screen.dart';
 import 'package:flutter_widgets/screens/Progress_Screen.dart';
 import 'package:flutter_widgets/screens/cardScreen.dart';
 import 'package:flutter_widgets/screens/clip.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: TextFieldScreen(),debugShowCheckedModeBanner: false,);
+    return MaterialApp(home: Calculator(),debugShowCheckedModeBanner: false,);
   }
 }
 
