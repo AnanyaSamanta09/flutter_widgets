@@ -32,7 +32,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
   int selected_index=-1;
   custom_tile(Icon icon,String text,int index)
   {
-    return InkWell(
+    return InkWell(  //NOTE: Inkwell is used for ontap()
       onTap: () {
         setState((){
           selected_index=index;
@@ -50,9 +50,11 @@ class _CustomDrawerState extends State<CustomDrawer> {
             ),
             Text(text,
               style: TextStyle(
+                  fontFamily: 'TheNautigal',
                   fontSize: 18,
                   color: selected_index==index?Colors.blue:Colors.black,
-                  fontWeight: FontWeight.w500
+                  fontWeight: FontWeight.bold,
+                letterSpacing: 3,
               ),
             ),
           ],
