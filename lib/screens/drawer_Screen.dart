@@ -51,6 +51,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             Text(text,
               style: TextStyle(
                   fontSize: 18,
+                  color: selected_index==index?Colors.blue:Colors.black,
                   fontWeight: FontWeight.w500
               ),
             ),
@@ -109,23 +110,24 @@ class _CustomDrawerState extends State<CustomDrawer> {
             SizedBox(
               height: 60,
             ),
-            custom_tile(Icon(Icons.folder), 'My Files',0),
+           //NOTE: color: selected_index==0 ? Colors.blue: Colors.black //this is used to convert the color of selected index or icon to blue & rest all to black
+            custom_tile(Icon(Icons.folder,color: selected_index==0 ? Colors.blue: Colors.black), 'My Files',0),
 
-            custom_tile(Icon(Icons.people), 'Shared with me',1),
+            custom_tile(Icon(Icons.people,color: selected_index==1 ? Colors.blue: Colors.black), 'Shared with me',1),
 
-            custom_tile(Icon(Icons.star), 'Starred',2),
+            custom_tile(Icon(Icons.star,color: selected_index==2 ? Colors.blue: Colors.black), 'Starred',2),
 
-            custom_tile(Icon(Icons.watch_later_outlined), 'Recent',3),
+            custom_tile(Icon(Icons.watch_later_outlined,color: selected_index==3 ? Colors.blue: Colors.black), 'Recent',3),
 
-            custom_tile(Icon(Icons.offline_pin), 'Offline',4),
+            custom_tile(Icon(Icons.offline_pin,color: selected_index==4 ? Colors.blue: Colors.black), 'Offline',4),
 
-            custom_tile(Icon(Icons.upload), 'Uploads',5),
+            custom_tile(Icon(Icons.upload,color: selected_index==5 ? Colors.blue: Colors.black), 'Uploads',5),
 
-            custom_tile(Icon(Icons.backup), 'Backups',6),
+            custom_tile(Icon(Icons.backup,color: selected_index==6 ? Colors.blue: Colors.black), 'Backups',6),
 
-            custom_tile(Icon(Icons.delete), 'Trash',7),
+            custom_tile(Icon(Icons.delete,color: selected_index==7 ? Colors.blue: Colors.black), 'Trash',7),
 
-            custom_tile(Icon(Icons.settings), 'Settings & account',8),
+            custom_tile(Icon(Icons.settings,color: selected_index==8 ? Colors.blue: Colors.black), 'Settings & account',8),
           ],
         ),
       ),
