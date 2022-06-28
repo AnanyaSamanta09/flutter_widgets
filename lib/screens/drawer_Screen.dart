@@ -20,91 +20,114 @@ class DrawerScreen extends StatelessWidget {
   }
 }
 
-class CustomDrawer extends StatelessWidget {
+class CustomDrawer extends StatefulWidget {
   const CustomDrawer({Key? key}) : super(key: key);
 
-  custom_tile(Icon icon,String text)
+  @override
+  State<CustomDrawer> createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
+
+  int selected_index=-1;
+  custom_tile(Icon icon,String text,int index)
   {
-    return Row(
-      children: [
-        icon,
-        SizedBox(
-          width: 20,
+    return InkWell(
+      onTap: () {
+        setState((){
+          selected_index=index;
+        });
+      },
+      child: Container(
+        padding: EdgeInsets.only(left: 10),
+        height: 60,
+        color: selected_index==index? Colors.blue.shade100:Colors.transparent,
+        child: Row(
+          children: [
+            icon,
+            SizedBox(
+              width: 20,
+            ),
+            Text(text,
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500
+              ),
+            ),
+          ],
         ),
-        Text(text,
-          style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500
-          ),
-        ),
-      ],
+      ),
     );
   }
-
+  String email='ananya123@gmail.com';
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 65, left: 25),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CircleAvatar(
-            backgroundImage: AssetImage('assets/images/AR.jfif'),
-            radius: 40,
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Text('Ananya Rawat',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                fontSize: 22
-              ),
-          ),
-          Text('ananya123@gmail.com',
-            style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 18
+      padding: const EdgeInsets.only(top: 65, left: 25,right: 10),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CircleAvatar(
+              backgroundImage: AssetImage('assets/images/AR.jfif'),
+              radius: 40,
             ),
-          ),
-          SizedBox(
-            height: 60,
-          ),
-          custom_tile(Icon(Icons.folder), 'My Files'),
-          SizedBox(
-            height: 30,
-          ),
-          custom_tile(Icon(Icons.people), 'Shared with me'),
-          SizedBox(
-            height: 30,
-          ),
-          custom_tile(Icon(Icons.star), 'Starred'),
-          SizedBox(
-            height: 30,
-          ),
-          custom_tile(Icon(Icons.watch_later_outlined), 'Recent'),
-          SizedBox(
-            height: 30,
-          ),
-          custom_tile(Icon(Icons.offline_pin), 'Offline'),
-          SizedBox(
-            height: 30,
-          ),
-          custom_tile(Icon(Icons.upload), 'Uploads'),
-          SizedBox(
-            height: 30,
-          ),
-          custom_tile(Icon(Icons.backup), 'Backups'),
-          SizedBox(
-            height: 30,
-          ),
-          custom_tile(Icon(Icons.delete), 'Trash'),
-          SizedBox(
-            height: 60,
-          ),
-          custom_tile(Icon(Icons.settings), 'Settings & account'),
-        ],
+            SizedBox(
+              height: 15,
+            ),
+            Text('Ananya Rawat',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  fontSize: 22
+                ),
+            ),
+            DropdownButtonFormField<String>(
+              // value: dropdownValue,
+              value: email,
+              style: TextStyle(color: Colors.black),
+              decoration: InputDecoration(
+                isCollapsed: true,
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none
+              ),
+              icon: Icon(Icons.arrow_drop_down,color: Colors.black),
+              onChanged: (newValue) {
+                setState(() {
+                  email=newValue!;
+                });
+              },
+              items: <String>[
+                'ananya123@gmail.com','ananya456@gmail.com','ananya1287@gmail.com'
+              ].map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            custom_tile(Icon(Icons.folder), 'My Files',0),
+
+            custom_tile(Icon(Icons.people), 'Shared with me',1),
+
+            custom_tile(Icon(Icons.star), 'Starred',2),
+
+            custom_tile(Icon(Icons.watch_later_outlined), 'Recent',3),
+
+            custom_tile(Icon(Icons.offline_pin), 'Offline',4),
+
+            custom_tile(Icon(Icons.upload), 'Uploads',5),
+
+            custom_tile(Icon(Icons.backup), 'Backups',6),
+
+            custom_tile(Icon(Icons.delete), 'Trash',7),
+
+            custom_tile(Icon(Icons.settings), 'Settings & account',8),
+          ],
+        ),
       ),
     );
   }
